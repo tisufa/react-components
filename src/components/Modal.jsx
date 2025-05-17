@@ -18,9 +18,9 @@ export const Modal = ({ onChange, onClose, ...props }) => {
   };
 
   const handleClose = () => {
-    if (!onClose) return;
     setIsShow(false);
     setTimeout(() => {
+      if (!onClose) return;
       onClose();
     }, 200);
   };

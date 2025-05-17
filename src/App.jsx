@@ -1,21 +1,17 @@
-import { useState } from "react";
-import { Modal } from "./components/Modal";
+import { useModal } from "./hooks";
 import { PopupAddUser } from "./PopupAddUser";
 
 function App() {
-  const [isShow, setIsShow] = useState(false);
+  const modal = useModal();
+
+  console.log("Appp!!!");
 
   const handleShowModal = () => {
-    setIsShow(true);
-  };
-
-  const handleSubmit = (result) => {
-    console.log(result);
-    setIsShow(false);
-  };
-
-  const handleCancel = () => {
-    setIsShow(false);
+    const model = { id: 1, name: "John Doe" };
+    modal.open(PopupAddUser, model).then((result) => {
+      console.log("Updated");
+      console.log(result);
+    });
   };
 
   return (
@@ -29,14 +25,6 @@ function App() {
           Open Modal
         </button>
       </div>
-      {isShow && (
-        <Modal
-          onChange={handleSubmit}
-          onClose={handleCancel}
-          model={{ id: 1, name: "John Doe" }}
-          component={PopupAddUser}
-        />
-      )}
     </>
   );
 }

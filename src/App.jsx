@@ -3,9 +3,6 @@ import { PopupAddUser } from "./PopupAddUser";
 
 function App() {
   const modal = useModal();
-
-  console.log("Appp!!!");
-
   const handleShowModal = () => {
     const model = { id: 1, name: "John Doe" };
     modal.open(PopupAddUser, model).then((result) => {

@@ -6,6 +6,6 @@ A guide on creating reusable components using ReactJS, Material-UI, TailwindCSS,
 
 #### TailwindCSS
 
-1. [Creating a Reusable Popup/Modal Using TailwindCSS](https://github.com/tisufa/react-components/tree/react-modal-with-tailwindcss "Creating a Reusable Popup/Modal Using TailwindCSS")
+➡️[Creating a Reusable Popup/Modal Using TailwindCSS](https://github.com/tisufa/react-components/tree/react-modal-with-tailwindcss "Creating a Reusable Popup/Modal Using TailwindCSS")
 
 If you need further assistance or additional sections, feel free to ask!

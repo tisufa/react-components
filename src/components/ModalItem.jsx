@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { ActiveModalProvider } from "../provider";
 const ModalItem = ({ onChange, onClose, ...props }) => {
   const [isShow, setIsShow] = useState(false);
 
@@ -46,13 +46,13 @@ const ModalItem = ({ onChange, onClose, ...props }) => {
               isShow ? "opacity-100 translate-y-0 sm:scale-100" : ""
             }`}
           >
-            <div className="bg-white p-3">
+            <ActiveModalProvider onClose={onClose} onChange={handleChange}>
               <props.component
                 model={props.model}
                 onChange={handleChange}
                 onClose={handleClose}
               />
-            </div>
+            </ActiveModalProvider>
           </div>
         </div>
       </div>

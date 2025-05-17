@@ -1,19 +1,21 @@
-export const PopupAddUser = ({ onChange, onClose, model }) => {
+import { Popup } from "./components/Popup";
+import { useActiveModal } from "./hooks";
+
+export const PopupAddUser = ({ model }) => {
+  const activeModal = useActiveModal();
+
   const handleSubmit = () => {
-    setTimeout(() => {
-      console.log("Date received!");
-      onChange({ id: 1, name: "Jane Doe" });
-    }, 3000);
+    activeModal.change({ id: 1, name: "Jane Doe" });
   };
+
   return (
-    <div>
-      <h1 className="text-2xl font-semibold">Ubah Pengguna</h1>
+    <Popup header="Add User">
       <p>Masukkan semua data yang diperlukan lalu klik Tambah</p>
       <p>Nama Pengguna: {model.name}</p>
       <div className="flex justify-end gap-2 mt-3">
         <button
           className="bg-slate-200 p-3 py-2 rounded-md hover:bg-slate-300"
-          onClick={onClose}
+          onClick={activeModal.close}
         >
           Cancel
         </button>
@@ -24,6 +26,6 @@ export const PopupAddUser = ({ onChange, onClose, model }) => {
           Submit
         </button>
       </div>
-    </div>
+    </Popup>
   );
 };

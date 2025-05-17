@@ -8,7 +8,6 @@ export const Modal = forwardRef((props, ref) => {
   }));
 
   const open = (component, model) => {
-    console.log("Open");
     return new Promise((resolve) => {
       const modal = { component, model, resolve };
       setModals((prev) => [...prev, modal]);

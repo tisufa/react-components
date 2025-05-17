@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Modal } from "./components/Modal";
+import { PopupAddUser } from "./PopupAddUser";
 
 function App() {
   const [isShow, setIsShow] = useState(false);
@@ -28,7 +29,14 @@ function App() {
           Open Modal
         </button>
       </div>
-      {isShow && <Modal onChange={handleSubmit} onClose={handleCancel} />}
+      {isShow && (
+        <Modal
+          onChange={handleSubmit}
+          onClose={handleCancel}
+          model={{ id: 1, name: "John Doe" }}
+          component={PopupAddUser}
+        />
+      )}
     </>
   );
 }

@@ -46,7 +46,7 @@ const ModalItem = ({ onChange, onClose, ...props }) => {
               isShow ? "opacity-100 translate-y-0 sm:scale-100" : ""
             }`}
           >
-            <ActiveModalProvider onClose={onClose} onChange={handleChange}>
+            <ActiveModalProvider onClose={handleClose} onChange={handleChange}>
               <props.component
                 model={props.model}
                 onChange={handleChange}
@@ -61,3 +61,4 @@ const ModalItem = ({ onChange, onClose, ...props }) => {
 };
 
 export { ModalItem };
+
